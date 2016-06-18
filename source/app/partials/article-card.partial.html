@@ -1,0 +1,31 @@
+<div class="article-card" ng-click="navigationService.navigateToArticleShow(article.ID)">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 hidden-xs block-container">
+                <div class="block">
+                    <span class="text-primary">{{vm.getPrimaryText()}}</span>
+                </div>
+            </div>
+            <div class="col-sm-10 col-xs-12 block-container">
+                <div class="block visible-xs">
+                    <span class="text-primary">{{vm.getPrimaryText()}}</span>
+                </div>
+                <div class="block">
+                    <h4>{{article.Title}}</h4>
+                    <p class="text-muted">{{article.getDates()}}</p>
+                </div>
+                <div class="block">
+                    <div ng-repeat="member in article.Persons"
+                         avatar="member.Avatar" data-size="50" data-alternate="{{member.nameFull}}"
+                         style="position: relative; display: inline-block; padding: 5px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttons" ng-show="authService.isRedactor()">
+        <button ng-click="navigationService.navigateToArticleModify(article.ID);$event.stopPropagation();"
+                class="btn btn-warning btn-fab btn-fab-mini">
+            <i class="mdi mdi-pencil"></i>
+        </button>
+    </div>
+</div>

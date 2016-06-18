@@ -1,0 +1,65 @@
+<button id="add-member-button" type="button" class="btn btn-sm btn-raised btn-default" style="display:none;"
+        data-target="#add-member-dialog" data-toggle="modal">
+    Редактировать
+</button>
+
+<div id="add-member-dialog" class="modal fade in" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Участники</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div ng-repeat="member in members"
+                                 avatar="member.Avatar" data-size="50" data-alternate="{{member.nameFull}}"
+                                 style="position: relative; display: inline-block; padding: 5px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label">Поиск</label>
+                                <input type="search" class="form-control" ng-model="vm.filter">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" ng-repeat="person in vm.persons | personSearch:vm.filter"
+                         style="padding-bottom: 5px;">
+                        <div class="col-xs-4">
+                            <div class="vertical-align"
+                                 avatar="person.Avatar" data-size="50" data-alternate="{{person.nameFull}}">
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="vertical-align">
+                                {{person.nameLast}}<br>{{person.nameFirst}}
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="block vertical-align">
+                                <button type="button" class="btn btn-sm btn-primary"
+                                        ng-if="!vm.existMember(person)" ng-click="vm.addMember(person)">
+                                    Добавить
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger"
+                                        ng-if="vm.existMember(person)" ng-click="vm.removeMember(person)">
+                                    Удалить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

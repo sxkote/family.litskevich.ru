@@ -1,0 +1,67 @@
+<h3 class="text-center">Члены Семьи</h3>
+<div ng-controller="personsController as vm" ng-init="vm.reloadAll()">
+    <person-list data-persons="vm.persons"></person-list>
+
+    <div style="position: fixed; bottom: 20px; right:20px;" ng-if="authService.isRedactor()">
+        <button type="button" class="btn btn-primary btn-fab" data-toggle="modal" data-target="#create-person-dialog">
+            <i class="mdi mdi-plus mdi-36px"></i>
+        </button>
+    </div>
+
+    <div id="create-person-dialog" class="modal fade in" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Создание Члена Семьи</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group label-static">
+                                    <label class="control-label">Фамилия</label>
+                                    <input type="text" class="form-control" ng-model="vm.person.Name.Last"
+                                           placeholder="Фамилия">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group label-static">
+                                    <label class="control-label">Девичья фамилия</label>
+                                    <input type="text" class="form-control" ng-model="vm.person.Name.Maiden"
+                                           placeholder="Девичья фамилия">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group label-static">
+                                    <label class="control-label">Имя</label>
+                                    <input type="text" class="form-control" ng-model="vm.person.Name.First"
+                                           placeholder="Имя">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group label-static">
+                                    <label class="control-label">Отчество</label>
+                                    <input type="text" class="form-control" ng-model="vm.person.Name.Second"
+                                           placeholder="Отчество">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal"
+                            ng-click="vm.createPerson()">
+                        Создать
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

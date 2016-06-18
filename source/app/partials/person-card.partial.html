@@ -1,0 +1,21 @@
+<div class="person-card" ng-click="navigationService.navigateToPersonShow(person.ID)">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <div class="block" avatar="person.Avatar" data-size="100" /> <!--data-alternate="{{person.nameFull}}"-->
+            </div>
+            <div class="col-sm-8 text-xs-center text-md-left">
+                <div class="block">
+                    <h4>{{person.nameLast}}<br>{{person.nameFirst}}</h4>
+                    <p class="text-muted">{{person.getDates()}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttons" ng-show="authService.isRedactor()">
+        <button ng-click="navigationService.navigateToPersonModify(person.ID);$event.stopPropagation();"
+                class="btn btn-warning btn-fab btn-fab-mini">
+            <i class="mdi mdi-pencil"></i>
+        </button>
+    </div>
+</div>

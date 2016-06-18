@@ -1,0 +1,18 @@
+<div class="material-box text-center">
+    <img ng-src="{{avatarUrl}}" class="icon">
+    <div class="buttons">
+        <button class="btn btn-fab btn-default btn-fab-mini" ng-click="vm.rotateMaterial(false)">
+            <i class="mdi mdi-rotate-left"></i>
+        </button>
+        <button class="btn btn-fab btn-default btn-fab-mini" ng-click="vm.rotateMaterial(true)">
+            <i class="mdi mdi-rotate-right"></i>
+        </button>
+        <button class="btn btn-fab btn-info btn-fab-mini" ng-click="vm.editMaterial()">
+            <i class="mdi mdi-pencil"></i>
+        </button>
+        <button class="btn btn-fab btn-danger btn-fab-mini" style="margin-left: 10px;" ng-click="vm.removeMaterial()">
+            <i class="mdi mdi-delete"></i>
+        </button>
+    </div>
+</div>
+

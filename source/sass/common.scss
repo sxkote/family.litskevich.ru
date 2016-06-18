@@ -1,0 +1,42 @@
+@import "variables";
+
+@keyframes display-with-delay {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.2;
+  }
+  70% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@each $color in $random-color-list {
+  .brd-#{$color} {
+    border: 1px solid #{$color};
+  }
+}
+
+
+@each $size in $default-size-name-list {
+  @media #{nth($media-continuous-query-list, index($default-size-name-list, $size))}{
+    @each $align in $default-align-list {
+      .text-#{$size}-#{$align} {
+        text-align: $align !important;
+      }
+    }
+  }
+}

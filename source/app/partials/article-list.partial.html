@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <div class="form-group label-floating is-empty">
+                <label class="control-label">Поиск</label>
+                <input type="search" class="form-control" ng-model="vm.filter">
+                <span class="material-input"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" ng-repeat="article in articles | articleSearch:vm.filter">
+            <article-card data-article="article"></article-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="container-fluid" ng-controller="personsController as vm" ng-init="vm.reload()">
+    <person-card data-person="vm.person" data-show-edit-button="false"></person-card>
+    <h3 class="text-center">Статьи:</h3>
+    <article-list person-id="$routeParams.personID" show-create-button="true"></article-list>
+</div>

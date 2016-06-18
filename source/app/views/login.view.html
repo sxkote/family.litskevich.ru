@@ -1,0 +1,24 @@
+<h3 class="text-center">Вход</h3>
+<div class="container" ng-controller="authController as vm">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="form-group label-floating is-empty">
+                <label class="control-label">Логин</label>
+                <input type="text" class="form-control" ng-model="vm.login">
+                <span class="material-input"></span>
+            </div>
+        </div>
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="form-group label-floating is-empty">
+                <label class="control-label">Пароль</label>
+                <input type="password" class="form-control" ng-model="vm.password">
+                <span class="material-input"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4 text-center">
+            <button type="button" class="btn btn-primary" ng-click="vm.enter()">Вход</button>
+        </div>
+    </div>
+</div>

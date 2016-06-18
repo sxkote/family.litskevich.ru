@@ -1,0 +1,22 @@
+{
+  "name": "Litskevich.Family.Web",
+  "authors": [
+    "Ivan Litskevich <sxkote@gmail.com>"
+  ],
+  "description": "Litskevich Family Archive",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "family.litskevich.ru",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source/lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "^0.5.9",
+    "angular-local-storage": "^0.2.7"
+  }
+}

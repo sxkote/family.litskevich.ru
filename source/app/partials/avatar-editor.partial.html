@@ -1,0 +1,40 @@
+<div>
+    <img ng-src="{{avatar}}" class="avatar img-circle img-thumbnail" style="cursor: pointer;"
+         ng-click="vm.displayAvatarModal(true)">
+</div>
+
+<div id="avatar-modal" class="modal fade" tabindex="-1">
+    <form class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Редактирование Аватара</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row vertical-align">
+                    <div class="col-sm-8">
+                        <div>
+                            <div>Выберите изображение: <input type="file" id="avatarFile"/></div>
+                            <div style="background:#E4E4E4;overflow: hidden;height: 200px;width: 300px;">
+                                <img-crop image="avatarFile" result-image="avatarPreview"></img-crop>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div>
+                            <div class="text-center">Аватар</div>
+                            <div class="text-center">
+                                <img ng-src="{{avatarPreview}}" class="avatar img-circle img-thumbnail"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-sm btn-danger" ng-click="vm.cancel()">Отменить</button>
+                <button type="submit" class="btn btn-sm btn-primary" ng-click="vm.apply()">Сохранить</button>
+            </div>
+        </div>
+    </form>
+</div>
