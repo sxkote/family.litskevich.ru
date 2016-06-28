@@ -1,29 +1,66 @@
 @import "variables";
 
+.error{
+  background-color: indianred;
+}
+
 img.avatar {
   width: 100px;
   height: 100px;
-
+  padding: 2px;
   //box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+  &.clickable {
+    &:hover {
+      cursor: pointer;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+  }
 }
 
 .card {
   position: relative;
   display: block;
-  width: 100%;
   margin: 10px;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 10px;
+  border-radius: 5px;
   text-decoration: none;
-  //background-color: white;
-  //box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+
+  &.raised {
+    background-color: white;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .title {
+    margin-top: 10px;
+  }
 
   .block-container {
     padding: 5px;
+
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
+    align-items: flex-start;
+
+    &.block-container-top {
+      justify-content: flex-start;
+    }
+    &.block-container-middle {
+      justify-content: center;
+    }
+    &.block-container-bottom {
+      justify-content: flex-end;
+    }
+    &.block-container-left {
+      align-items: flex-start;
+    }
+    &.block-container-center {
+      align-items: center;
+    }
+    &.block-container-right {
+      align-items: flex-end;
+    }
   }
 
   .block {
@@ -44,26 +81,33 @@ img.avatar {
   }
 
   &:hover {
-    background-color: rgba(250, 250, 250, 0.9);
-    box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.5);
     transition: all 0.5s ease;
 
-    .buttons {
-      display: block;
-      animation: display-with-delay 2s;
+    &.raised {
+      background-color: rgba(245, 245, 245, 0.8);
+      box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5);
+    }
+
+    &.clickable {
+      background-color: rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+
+      .buttons {
+        display: block;
+        animation: display-with-delay 2s;
+      }
     }
   }
 }
 
 .person-card, .article-card {
   @extend .card;
-  cursor: pointer;
 }
 
 .person-card {
-  min-height: 100px;
+  min-height: 120px;
   .block-container {
-    min-height: 100px;
+    min-height: 120px;
   }
 }
 
@@ -113,16 +157,33 @@ img.avatar {
   }
 }
 
-.media-container {
-  position: fixed;
-  z-index: 3000;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: 10px;
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 1px solid red;
-  overflow-y: auto;
-  color: white;
+.sxmg {
+  img.sxmg-item {
+    background: white;
+    border-radius: 3px;
+    border: 1px solid gray;
+    padding: 2px;
+    margin: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    @media #{$bootstrap-media-query-xs} {
+      height: 100px;
+      max-width: 300px;
+      max-height: 100px;
+    }
+    @media #{$bootstrap-media-query-sm} {
+      height: 150px;
+      max-width: 400px;
+      max-height: 150px;
+    }
+    @media #{$bootstrap-media-query-md} {
+      height: 200px;
+      max-width: 600px;
+      max-height: 200px;
+    }
+    &:hover {
+      cursor: pointer;
+      //background: lightgray;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+    }
+  }
 }

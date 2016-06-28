@@ -1,0 +1,127 @@
+/* Media Sizes */
+/* Media Queries */
+.error {
+  background-color: indianred; }
+
+img.avatar {
+  width: 100px;
+  height: 100px;
+  padding: 2px; }
+  img.avatar.clickable:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+
+.card, .person-card, .article-card {
+  position: relative;
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none; }
+  .card.raised, .raised.person-card, .raised.article-card {
+    background-color: white;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); }
+  .card .title, .person-card .title, .article-card .title {
+    margin-top: 10px; }
+  .card .block-container, .person-card .block-container, .article-card .block-container {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; }
+    .card .block-container.block-container-top, .person-card .block-container.block-container-top, .article-card .block-container.block-container-top {
+      justify-content: flex-start; }
+    .card .block-container.block-container-middle, .person-card .block-container.block-container-middle, .article-card .block-container.block-container-middle {
+      justify-content: center; }
+    .card .block-container.block-container-bottom, .person-card .block-container.block-container-bottom, .article-card .block-container.block-container-bottom {
+      justify-content: flex-end; }
+    .card .block-container.block-container-left, .person-card .block-container.block-container-left, .article-card .block-container.block-container-left {
+      align-items: flex-start; }
+    .card .block-container.block-container-center, .person-card .block-container.block-container-center, .article-card .block-container.block-container-center {
+      align-items: center; }
+    .card .block-container.block-container-right, .person-card .block-container.block-container-right, .article-card .block-container.block-container-right {
+      align-items: flex-end; }
+  .card .buttons, .person-card .buttons, .article-card .buttons {
+    z-index: 10;
+    display: none;
+    position: absolute;
+    right: 10px;
+    bottom: 10px; }
+  .card:active, .person-card:active, .article-card:active, .card:hover, .person-card:hover, .article-card:hover, .card:visited, .person-card:visited, .article-card:visited {
+    text-decoration: none; }
+  .card:hover, .person-card:hover, .article-card:hover {
+    transition: all 0.5s ease; }
+    .card:hover.raised, .person-card:hover.raised, .article-card:hover.raised {
+      background-color: rgba(245, 245, 245, 0.8);
+      box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5); }
+    .card:hover.clickable, .person-card:hover.clickable, .article-card:hover.clickable {
+      background-color: rgba(255, 255, 255, 0.8);
+      cursor: pointer; }
+      .card:hover.clickable .buttons, .person-card:hover.clickable .buttons, .article-card:hover.clickable .buttons {
+        display: block;
+        animation: display-with-delay 2s; }
+
+.person-card {
+  min-height: 120px; }
+  .person-card .block-container {
+    min-height: 120px; }
+
+.article-card {
+  min-height: 120px; }
+  .article-card .block-container {
+    min-height: 120px; }
+  .article-card .text-primary {
+    font-weight: bold; }
+
+.material-box {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  max-width: 200px;
+  max-height: 200px; }
+  .material-box img.icon {
+    background: white;
+    border-radius: 3px;
+    border: 1px solid gray;
+    padding: 5px;
+    height: 200px; }
+  .material-box .buttons {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 3px;
+    background: rgba(0, 0, 0, 0.5); }
+  .material-box:hover {
+    transition: all 0.2s ease; }
+    .material-box:hover .buttons {
+      display: block;
+      animation: display-with-delay 1s; }
+
+.sxmg img.sxmg-item {
+  background: white;
+  border-radius: 3px;
+  border: 1px solid gray;
+  padding: 2px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
+  @media only screen and (max-width: 767px) {
+    .sxmg img.sxmg-item {
+      height: 100px;
+      max-width: 300px;
+      max-height: 100px; } }
+  @media only screen and (min-width: 768px) {
+    .sxmg img.sxmg-item {
+      height: 150px;
+      max-width: 400px;
+      max-height: 150px; } }
+  @media only screen and (min-width: 992px) {
+    .sxmg img.sxmg-item {
+      height: 200px;
+      max-width: 600px;
+      max-height: 200px; } }
+  .sxmg img.sxmg-item:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); }

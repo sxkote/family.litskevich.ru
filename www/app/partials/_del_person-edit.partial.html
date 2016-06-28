@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-sm-6">
+        <avatar-editor avatar="person.Avatar"></avatar-editor>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <div class="radio">
+                <label><input type="radio" name="gender" ng-model="person.Gender" ng-value="1" >Мужчина</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="gender" ng-model="person.Gender" ng-value="2" >Женщина</label>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group label-static">
+            <label class="control-label">Фамилия</label>
+            <input type="text" class="form-control" ng-model="person.Name.Last" placeholder="Фамилия">
+            <span class="material-input"></span>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group label-static">
+            <label class="control-label">Девичья фамилия</label>
+            <input type="text" class="form-control" ng-model="person.Name.Maiden" placeholder="Девичья фамилия">
+            <span class="material-input"></span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group label-static">
+            <label class="control-label">Имя</label>
+            <input type="text" class="form-control" ng-model="person.Name.First" placeholder="Имя">
+            <span class="material-input"></span>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group label-static">
+            <label class="control-label">Отчество</label>
+            <input type="text" class="form-control" ng-model="person.Name.Second" placeholder="Отчество">
+            <span class="material-input"></span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group label-static">
+            <label class="control-label">Дата рождения</label>
+            <input type="date" class="form-control" ng-model="person.DateBirth">
+            <span class="material-input"></span>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group label-static">
+            <label class="control-label">Дата смерти</label>
+            <input type="date" class="form-control" ng-model="person.DateDeath">
+            <span class="material-input"></span>
+        </div>
+    </div>
+</div>

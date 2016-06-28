@@ -33,6 +33,8 @@ gulp.task('copy', function() {
     gulp.src('./source/lib/bootstrap-material-design/dist/css/ripples.min.css').pipe(gulp.dest(dest + '/css'));
     gulp.src('./source/lib/mdi/css/materialdesignicons.min.css').pipe(gulp.dest(dest + '/css'));
     gulp.src('./source/lib/ng-img-crop/compile/minified/ng-img-crop.css').pipe(gulp.dest(dest + '/css'));
+    gulp.src('./source/lib/snackbarjs/dist/snackbar.min.css').pipe(gulp.dest(dest + '/css'));
+    gulp.src('./source/lib/sx-media-gallery/dist/css/sx-media-gallery.css').pipe(gulp.dest(dest + '/css'));
 
 
     // JavaScript files
@@ -48,7 +50,13 @@ gulp.task('copy', function() {
     gulp.src('./source/lib/momentjs/min/moment-with-locales.min.js').pipe(gulp.dest(dest + '/js'));
     gulp.src('./source/lib/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js').pipe(gulp.dest(dest + '/js'));
     gulp.src('./source/lib/arrive/minified/arrive.min.js').pipe(gulp.dest(dest + '/js'));
+    gulp.src('./source/lib/snackbarjs/dist/snackbar.min.js').pipe(gulp.dest(dest + '/js'));
     gulp.src('./source/lib/flow.js/dist/flow.min.js').pipe(gulp.dest(dest + '/js'));
+    gulp.src('./source/lib/sx-media-gallery/dist/js/.js').pipe(gulp.dest(dest + '/js'));
+    gulp.src('./source/lib/sx-media-gallery/dist/js/jquery.event.move.js').pipe(gulp.dest(dest + '/js'));
+    gulp.src('./source/lib/sx-media-gallery/dist/js/jquery.event.swipe.js').pipe(gulp.dest(dest + '/js'));
+    gulp.src('./source/lib/sx-media-gallery/dist/js/pdfobject.min.js').pipe(gulp.dest(dest + '/js'));
+    gulp.src('./source/lib/sx-media-gallery/dist/js/sx-media-gallery.js').pipe(gulp.dest(dest + '/js'));
 
     gulp.src('./source/lib/angular/angular.min.js').pipe(gulp.dest(dest + '/js'));
     gulp.src('./source/lib/angular-route/angular-route.min.js').pipe(gulp.dest(dest + '/js'));

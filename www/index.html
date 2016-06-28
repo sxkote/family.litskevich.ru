@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Лицкевич - Семейный Архив</title>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+    <!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">-->
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <!--<link rel="stylesheet" href="css/material-design-iconic-font.min.css">-->
     <link rel="stylesheet" href="css/materialdesignicons.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
     <link rel="stylesheet" href="css/ripples.min.css">
     <link rel="stylesheet" href="css/ng-img-crop.css">
+    <link rel="stylesheet" href="css/snackbar.min.css">
+    <link rel="stylesheet" href="css/sx-media-gallery.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -32,7 +35,12 @@
 <!--<script type="text/javascript" src="js/mdb.min.js"></script>-->
 <!--<script type="text/javascript" src="js/tether.min.js"></script>-->
 <script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/snackbar.min.js"></script>
 <script type="text/javascript" src="js/flow.min.js"></script>
+<script type="text/javascript" src="js/jquery.event.move.js"></script>
+<script type="text/javascript" src="js/jquery.event.swipe.js"></script>
+<script type="text/javascript" src="js/pdfobject.min.js"></script>
+<script type="text/javascript" src="js/sx-media-gallery.js"></script>
 
 
 <script type="text/javascript" src="js/angular.min.js"></script>
@@ -43,7 +51,11 @@
 
 
 <script type="text/javascript" src="app/classes/person.class.js"></script>
+<script type="text/javascript" src="app/classes/author.class.js"></script>
+<script type="text/javascript" src="app/classes/member.class.js"></script>
 <script type="text/javascript" src="app/classes/article.class.js"></script>
+<script type="text/javascript" src="app/classes/manager.class.js"></script>
+<script type="text/javascript" src="app/classes/guest.class.js"></script>
 <script type="text/javascript" src="app/classes/material.class.js"></script>
 <script type="text/javascript" src="app/classes/token.class.js"></script>
 
@@ -57,6 +69,7 @@
 <script type="text/javascript" src="app/services/auth.service.js"></script>
 <script type="text/javascript" src="app/services/persons.service.js"></script>
 <script type="text/javascript" src="app/services/articles.service.js"></script>
+<script type="text/javascript" src="app/services/materials.service.js"></script>
 <script type="text/javascript" src="app/services/file.service.js"></script>
 
 
@@ -86,14 +99,7 @@
 //        $('.media-container').bind('click', function (event) {
 //            event.stopPropagation();
 //        });
-        $(document).on('click', '.media-container', function (event) {
-            event.stopPropagation();
-        });
-        $(document).click(function () {
-            let container = $('.media-container');
-            if (container.css('display') != 'none')
-                container.hide();
-        });
+
 //        $('#person-add-date-birth').bootstrapMaterialDatePicker({weekStart: 0, time: false});
 //        $('#person-add-date-birth2').bootstrapMaterialDatePicker({weekStart: 0, time: false});
     });

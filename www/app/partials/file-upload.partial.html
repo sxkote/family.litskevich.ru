@@ -1,0 +1,20 @@
+<div flow-init flow-object="vm.flow" flow-files-submitted="vm.upload()">
+
+    <span ng-if="vm.blob && !multipleFiles">
+        Загружен: <a ng-click="vm.download()" style="cursor: pointer;">{{vm.blob.FileName}}</a>
+    </span>
+    <span class="btn btn-default" style="margin-left: 20px;" flow-btn>
+        <i class="mdi mdi-file-find"></i> Выбрать файл...
+    </span>
+
+</div>
+
+<div class="" style="width: 100%" ng-if="vm.isUploading">
+    <div>{{vm.uploadingFileName}}</div>
+    <div class="progress" style="height: 5px;">
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+             aria-valuenow="{{vm.flow.progress()}}"
+             style="{{'width:' + (vm.flow.progress() * 100).toString() + '%'}}">
+        </div>
+    </div>
+</div>

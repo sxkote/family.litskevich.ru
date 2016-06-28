@@ -1,19 +1,25 @@
 $default-size-name-list: xs sm md lg xl;
+$bootstrap-size-name-list: xs sm md lg;
 $default-align-list: left center right;
 $random-color-list: red green blue yellow white black;
 
 /* Media Sizes */
-$media-xs: 320px;
+$media-xs: 240px;//320px;
 $media-sm: 480px;
 $media-md: 768px;
 $media-lg: 992px;
 $media-xl: 1200px;
 
 /* Media Queries */
-$media-continuous-query-xs: "only screen and (min-width : " #{$media-xs - 1} ")";
-$media-continuous-query-sm: "only screen and (min-width : " #{$media-sm} ")";
-$media-continuous-query-md: "only screen and (min-width : " #{$media-md} ")";
-$media-continuous-query-lg: "only screen and (min-width : " #{$media-lg} ")";
-$media-continuous-query-xl: "only screen and (min-width : " #{$media-xl} ")";
+$media-query-xs: "only screen and (min-width : " #{$media-xs} ")";
+$media-query-sm: "only screen and (min-width : " #{$media-sm} ")";
+$media-query-md: "only screen and (min-width : " #{$media-md} ")";
+$media-query-lg: "only screen and (min-width : " #{$media-lg} ")";
+$media-query-xl: "only screen and (min-width : " #{$media-xl} ")";
 
-$media-continuous-query-list: $media-continuous-query-xs, $media-continuous-query-sm, $media-continuous-query-md, $media-continuous-query-lg, $media-continuous-query-xl;
+$bootstrap-media-query-xs: "only screen and (max-width : 767px)";
+$bootstrap-media-query-sm: "only screen and (min-width : 768px)";
+$bootstrap-media-query-md: "only screen and (min-width : 992px)";
+$bootstrap-media-query-lg: "only screen and (min-width : 1200px)";
+
+$media-continuous-query-list: $media-query-xs, $media-query-sm, $media-query-md, $media-query-lg, $media-query-xl;
