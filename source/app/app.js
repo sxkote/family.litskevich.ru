@@ -5,11 +5,11 @@ var app = angular.module('app', ['ngRoute', 'ngImgCrop', 'LocalStorageModule', '
 app.config(['$compileProvider', '$routeProvider', 'localStorageServiceProvider',
     function ($compileProvider, $routeProvider, localStorageServiceProvider) {
         Date.prototype.toRussianString = function () {
-            var year = this.getFullYear();
-            var month = this.getMonth() + 1;
+            let year = this.getFullYear();
+            let month = this.getMonth() + 1;
             if (month < 10)
                 month = "0" + month.toString();
-            var day = this.getDate();
+            let day = this.getDate();
 
             return day + '.' + month + '.' + year;
         };
@@ -55,11 +55,6 @@ app.run(['$rootScope', 'authService', 'navigationService',
         $rootScope.$on('$routeChangeStart', function (next, current) {
             $(document).find('.sxmg-panel').remove();
         });
-
-        //var token = localStorageService.get('token');
-        //if (token != null)
-        //    $http.defaults.headers.common['Authorization'] = 'Token ' + token.Key;
-
     }]);
 
 app.constant('URLS', {
