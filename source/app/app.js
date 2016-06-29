@@ -5,11 +5,11 @@ var app = angular.module('app', ['ngRoute', 'ngImgCrop', 'LocalStorageModule', '
 app.config(['$compileProvider', '$routeProvider', 'localStorageServiceProvider',
     function ($compileProvider, $routeProvider, localStorageServiceProvider) {
         Date.prototype.toRussianString = function () {
-            let year = this.getFullYear();
-            let month = this.getMonth() + 1;
+            var year = this.getFullYear();
+            var month = this.getMonth() + 1;
             if (month < 10)
                 month = "0" + month.toString();
-            let day = this.getDate();
+            var day = this.getDate();
 
             return day + '.' + month + '.' + year;
         };
@@ -69,28 +69,9 @@ app.constant('URLS', {
         //AVATAR: '/JQFile/Avatar/'
     },
     API: {
-        SERVER: 'http://localhost:62927/',
-        BASE: 'http://localhost:62927/api/',
-        //BASE: 'http://api.terminal.factoring-system.ru/api/',
+        //BASE: 'http://localhost:62927/api/',
+        BASE: 'http://api.family.litskevich.ru/api/',
         FILEUPLOAD: 'file/flow'
-    },
-    ROUTES: {
-        ROOT: '/',
-        LOGIN: '/login',
-        INSTITUTE: '/institute',
-        INSTITUTE_LIST: '/institute/list',
-        INSTITUTE_CREATE: '/institute/create',
-        INSTITUTE_EDIT: '/institute/:id',
-        PROFILE: '/profile',
-        REGISTRATION: '/registration',
-        REGISTRATION_COMPLETE: '/registration/complete/:id',
-        DEMAND: {
-            LIST: '/demand/list',
-            DIGITALSIGNATURE: '/demand/digitalsignature'
-        }
-    },
-    PATHS: {
-        TEMPLATES: '/app/views/'
     }
 });
 

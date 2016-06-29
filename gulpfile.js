@@ -4,7 +4,6 @@ var del = require('del');
 
 var dest = './www';
 
-
 gulp.task('sass', function() {
     gulp.src('source/sass/*.scss')
         .pipe(sass().on('error', sass.logError))

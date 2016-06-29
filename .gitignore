@@ -1,0 +1,7 @@
+## all node modules should be uploaded separately
+node_modules/
+
+
+## deployment information
+.idea/deployment.xml
+.idea/webServers.xml

@@ -26,12 +26,4 @@ class Member {
         let regex = new RegExp(filter, "i");
         return this.Name.search(regex) >= 0;
     }
-
-    static create(id, name, avatar = null) {
-        let result = new Member();
-        result.ID = id;
-        result.Name = name || '';
-        result.Avatar = avatar;
-        return result;
-    }
 }
