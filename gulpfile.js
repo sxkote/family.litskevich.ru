@@ -46,7 +46,8 @@ var paths = {
         js: './www/js/'
     },
     bower: {
-        path: './bower.json',
+        path: './bower_components/',
+        config: './bower.json',
         overrides: {
             "bootstrap": {main: ['./dist/js/*.min.js', './dist/css/*.min.css', './dist/fonts/*.*']},
             "angular": {main: ['./angular.min.js']},
@@ -73,7 +74,7 @@ gulp.task('lib.clean', function () {
 
 gulp.task('lib.vendor', function () {
     //var filterJS = gulpFilter('**/*.js', {restore: true});
-    return gulp.src(paths.bower.path)
+    return gulp.src(paths.bower.config)
         .pipe(mainBowerFiles({overrides: paths.bower.overrides}))
         //.pipe(filterJS)
         //.pipe(uglify())
