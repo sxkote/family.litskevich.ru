@@ -16,7 +16,21 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-material-design": "^0.5.9",
+    "angular-route": "^1.5.5",
+    "arrive": "^2.3.1",
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "mdi": "^1.6.50",
+    "ng-flow": "~2",
+    "ng-img-crop": "ngImgCrop#^0.3.2",
+    "jquery": "^2.2",
+    "bootstrap-material-design": "^0.5.10",
+    "snackbarjs": "^1.1.0",
+    "flow.js": "^2.11.2",
     "angular-local-storage": "^0.2.7"
+  },
+  "private": true,
+  "resolutions": {
+    "jquery": "^2.2"
   }
 }

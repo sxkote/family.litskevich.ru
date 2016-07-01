@@ -66,6 +66,9 @@
     position: relative;
     display: inline-block;
     vertical-align: middle; }
+  .sxmg-viewer .sxmg-viewer-content-image{
+    image-orientation: 0deg;
+  }
   .sxmg-viewer .sxmg-viewer-content-video {
     z-index: 3060;
     box-sizing: border-box;

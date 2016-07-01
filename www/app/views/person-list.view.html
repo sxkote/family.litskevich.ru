@@ -1,5 +1,8 @@
 <h2 class="text-center">Члены Семьи</h2>
 <div ng-controller="personsController as vm" ng-init="vm.reloadAll()">
+
+    <div class="loading"><i class="mdi mdi-36px mdi-autorenew rotating"></i></div>
+
     <person-list data-persons="vm.persons"></person-list>
 
     <div style="position: fixed; bottom: 20px; right:20px;" ng-if="authService.isRedactor()">

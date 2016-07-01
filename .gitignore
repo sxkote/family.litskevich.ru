@@ -1,7 +1,13 @@
 ## all node modules should be uploaded separately
-node_modules/
+/bower_components/
+/node_modules/
 
 
 ## deployment information
 .idea/deployment.xml
 .idea/webServers.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml

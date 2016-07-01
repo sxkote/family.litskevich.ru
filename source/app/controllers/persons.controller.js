@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('app')
-    .controller('personsController', ['$scope', '$routeParams', 'personsService', 'articlesService',
-        function ($scope, $routeParams, personsService, articlesService) {
+    .controller('personsController', ['$scope', '$element', '$routeParams', 'personsService', 'articlesService',
+        function ($scope, $element, $routeParams, personsService, articlesService) {
 
             this.persons = [];
             this.person = new Person();
@@ -22,6 +22,10 @@ angular.module('app')
                     this.articles.push(new Article(data[i]));
             }.bind(this);
 
+            this.hideLoading = function(){
+                $element.find('.loading').hide();
+            };
+
             this.reload = function (id) {
                 if (id == undefined || id == null)
                     id = $routeParams.id;
@@ -33,7 +37,10 @@ angular.module('app')
             };
 
             this.reloadAll = function () {
-                personsService.getAll().success(getPersons);
+                personsService.getAll().success(function (data) {
+                    getPersons(data);
+                    this.hideLoading();
+                }.bind(this));
             };
 
             this.reloadWithArticles = function (id) {
@@ -42,7 +49,10 @@ angular.module('app')
 
                 this.reload(id);
 
-                articlesService.getAllByPerson(id).success(getArticles);
+                articlesService.getAllByPerson(id).success(function (data) {
+                    getArticles(data);
+                    this.hideLoading();
+                }.bind(this));
             };
 
             this.createPerson = function () {
@@ -61,7 +71,7 @@ angular.module('app')
                     return;
 
                 personsService.updatePerson(this.person).success(function () {
-                    $scope.navigationService.navigateToPersonList();
+                    $scope.navigationService.navigateToPersonShow(this.person.ID);
                 }.bind(this));
             };
 

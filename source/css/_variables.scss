@@ -1,0 +1,24 @@
+$size-name-list: zs xs sm md lg xl zl;
+$horizontal-align-list: left center right;
+$random-color-list: red green blue yellow white black;
+
+/* Media Sizes */
+$media-size-zs: 0px;
+$media-size-xs: 240px; //320px;
+$media-size-sm: 544px;
+$media-size-md: 768px;
+$media-size-lg: 992px;
+$media-size-xl: 1200px;
+$media-size-zl: 1500px;
+$media-size-list: $media-size-zs, $media-size-xs, $media-size-sm, $media-size-md, $media-size-lg, $media-size-xl, $media-size-zl;
+
+/* Media Queries */
+$media-query-zs: "only screen and (min-width : #{$media-size-zs})";
+$media-query-xs: "only screen and (min-width : #{$media-size-xs})";
+$media-query-sm: "only screen and (min-width : #{$media-size-sm})";
+$media-query-md: "only screen and (min-width : #{$media-size-md})";
+$media-query-lg: "only screen and (min-width : #{$media-size-lg})";
+$media-query-xl: "only screen and (min-width : #{$media-size-xl})";
+$media-query-zl: "only screen and (min-width : #{$media-size-zl})";
+$media-query-list: $media-query-zs, $media-query-xs, $media-query-sm, $media-query-md, $media-query-lg, $media-query-xl, $media-query-zl;
+

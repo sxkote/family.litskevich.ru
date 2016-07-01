@@ -2,18 +2,11 @@
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Лицкевич - Семейный Архив</title>
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">-->
-    <!--<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">-->
-    <link rel="stylesheet" href="css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
-    <link rel="stylesheet" href="css/ripples.min.css">
-    <link rel="stylesheet" href="css/ng-img-crop.css">
-    <link rel="stylesheet" href="css/snackbar.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Лицкевичи - Семейный Архив</title>
+    
+    <link rel="stylesheet" href="css/vendor.min.css">
     <link rel="stylesheet" href="css/sx-media-gallery.css">
-    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -24,28 +17,11 @@
     <ng-view></ng-view>
 </div>
 
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/arrive.min.js"></script>
-<script type="text/javascript" src="js/ripples.min.js"></script>
-<script type="text/javascript" src="js/material.min.js"></script>
-<script type="text/javascript" src="js/snackbar.min.js"></script>
-<script type="text/javascript" src="js/flow.min.js"></script>
-<script type="text/javascript" src="js/sx-media-gallery.min.js"></script>
-<script type="text/javascript" src="js/pdfobject.min.js"></script>
-
-
-
-<script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="js/angular-route.min.js"></script>
-<script type="text/javascript" src="js/angular-local-storage.min.js"></script>
-<script type="text/javascript" src="js/ng-img-crop.js"></script>
-<script type="text/javascript" src="js/ng-flow.min.js"></script>
-
-<script type="text/javascript" src="app/app.js"></script>
-
-
+<script src="js/vendor.min.js"></script>
+<script src="js/sx-media-gallery.js"></script>
+<script src="js/pdfobject.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="app/app.js"></script>
 <script>
     $(document).ready(function () {
         $.material.init();

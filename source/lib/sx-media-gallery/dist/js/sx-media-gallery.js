@@ -497,6 +497,9 @@
             this._prefix = pluginPrefix + "-desk";
 
             this._element = $(`<div class='${this._prefix}'></div>`).css('display', 'none');
+            this.element.on('touchmove', function (event) {
+                event.stopPropagation();
+            });
 
             this._isVisible = false;
             this._materials = [];
@@ -580,8 +583,16 @@
             this.element.click(function (event) {
                 event.stopPropagation();
             });
-            this.element.on('swiperight', this.movePrevious.bind(this));
-            this.element.on('swipeleft', this.moveNext.bind(this));
+            this.element.on('swiperight', function (event) {
+                event.stopPropagation();
+                event.preventDefault();
+                this.movePrevious();
+            }.bind(this));
+            this.element.on('swipeleft', function (event) {
+                event.stopPropagation();
+                event.preventDefault();
+                this.moveNext();
+            }.bind(this));
 
             // on Info display changed
             this.element.on(`${pluginPrefix}-InfoDisplayChanged`, function (event, data) {
@@ -596,6 +607,8 @@
             // add arrows to move left & right
             this.element.append(SXMediaGalleryButton.create('panel-arrow', 'left', IconCollection.ArrowLeft, this.movePrevious.bind(this)).element);
             this.element.append(SXMediaGalleryButton.create('panel-arrow', 'right', IconCollection.ArrowRight, this.moveNext.bind(this)).element);
+            //this.element.find(`.${pluginPrefix}-panel-arrow`).addClass('hover');
+
 
             // create Viewer
             this._viewer = SXMediaGalleryViewer.create(this.element.width(), this.element.height(), this.margins, this._options);

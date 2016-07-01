@@ -1,4 +1,7 @@
-<div class="container-fluid" ng-controller="personsController as vm" ng-init="vm.reloadWithArticles()">
+<div class="" ng-controller="personsController as vm" ng-init="vm.reloadWithArticles()">
+
+    <div class="loading"><i class="mdi mdi-36px mdi-autorenew rotating"></i></div>
+
     <person-card data-person="vm.person" data-show-edit-button="false"></person-card>
 
     <article-list data-articles="vm.articles" data-filter="false"></article-list>

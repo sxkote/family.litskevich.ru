@@ -13,6 +13,10 @@ angular.module('app')
             this.materialToDelete = null;
             this.materialToUpdate = null;
 
+            this.hideLoading = function(){
+                $element.find('.loading').hide();
+            };
+
             this.reload = function (id) {
                 if (id == undefined || id == null)
                     id = $routeParams.id;
@@ -20,6 +24,7 @@ angular.module('app')
                 if (id > 0)
                     articlesService.getByID(id).success(function (data) {
                         this.article = new Article(data, materialsService);
+                        this.hideLoading();
                         this.reloadMediaGallery(this.article.Materials);
                     }.bind(this));
                 else
@@ -30,6 +35,7 @@ angular.module('app')
                 articlesService.getAll().success(function (data) {
                     for (let i = 0; i < data.length; i++)
                         this.articles.push(new Article(data[i], materialsService));
+                    this.hideLoading();
                 }.bind(this));
             };
 
@@ -37,6 +43,7 @@ angular.module('app')
                 articlesService.getAllByPerson(personID).success(function (data) {
                     for (let i = 0; i < data.length; i++)
                         this.articles.push(new Article(data[i], materialsService));
+                    this.hideLoading();
                 }.bind(this));
             };
 
@@ -71,7 +78,7 @@ angular.module('app')
             this.updateArticle = function () {
                 if (this.article) {
                     articlesService.updateArticle(this.article).success(function (data) {
-                        $scope.navigationService.navigateToArticleList();
+                        $scope.navigationService.navigateToArticleShow(this.article.ID);
                     }.bind(this));
                 }
             };
