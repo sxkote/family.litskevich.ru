@@ -18,6 +18,7 @@ angular.module('app')
             this.exit = function () {
                 this.token = null;
                 $scope.authService.logout();
+                $scope.hideMenu();
                 $rootScope.navigationService.navigateToRoot();
             };
 
@@ -44,6 +45,7 @@ angular.module('app')
             this.showInviteGuestDialog = function () {
                 this.guest = new Guest();
                 $('#invite-guest-dialog').modal('show');
+                $scope.hideMenu();
             };
 
             this.inviteGuest = function () {
@@ -72,4 +74,12 @@ angular.module('app')
             };
 
             $scope.$on('FamilyAuthentication', this.reload.bind(this));
+
+            $('.menu-link').on('click', function(){
+                $scope.hideMenu();
+            }).bind(this);
+
+            $scope.hideMenu = function(){
+                $('.navbar-collapse').collapse('hide');
+            };
         }]);

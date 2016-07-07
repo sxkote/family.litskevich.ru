@@ -15,30 +15,12 @@
             </div>
             <div class="navbar-collapse collapse navbar-default-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#/persons">Члены семьи</a></li>
-                    <li><a href="#/articles">Статьи</a></li>
-                    <!--<li class="dropdown">-->
-                    <!--<a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown-->
-                    <!--<b class="caret"></b></a>-->
-                    <!--<ul class="dropdown-menu">-->
-                    <!--<li><a href="javascript:void(0)">Action</a></li>-->
-                    <!--<li><a href="javascript:void(0)">Another action</a></li>-->
-                    <!--<li><a href="javascript:void(0)">Something else here</a></li>-->
-                    <!--<li class="divider"></li>-->
-                    <!--<li class="dropdown-header">Dropdown header</li>-->
-                    <!--<li><a href="javascript:void(0)">Separated link</a></li>-->
-                    <!--<li><a href="javascript:void(0)">One more separated link</a></li>-->
-                    <!--</ul>-->
-                    <!--</li>-->
+                    <li><a href="#/persons" class="menu-link">Члены семьи</a></li>
+                    <li><a href="#/articles" class="menu-link">Статьи</a></li>
                 </ul>
-                <!--<form class="navbar-form navbar-left">-->
-                <!--<div class="form-group">-->
-                <!--<input type="text" class="form-control col-md-8" placeholder="Search">-->
-                <!--</div>-->
-                <!--</form>-->
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-if="vm.token == null || !vm.token.isAuthenticated()">
-                        <a href="#/login">Войти</a>
+                        <a href="#/login" class="menu-link">Войти</a>
                     </li>
                     <li class="dropdown" ng-if="vm.token && vm.token.isAuthenticated()">
                         <a href="" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -46,19 +28,18 @@
                             <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#" ng-click="vm.showInviteGuestDialog();$event.preventDefault();">
+                                <a href="#" class="menu-link"
+                                   ng-click="vm.showInviteGuestDialog();$event.preventDefault();">
                                     Пригласить
                                 </a>
                             </li>
                             <li>
-                                <a href="#" ng-click="vm.exit();$event.preventDefault();">
+                                <a href="#" class="menu-link" ng-click="vm.exit();$event.preventDefault();">
                                     Выйти
                                 </a>
                             </li>
                         </ul>
                     </li>
-
-
                 </ul>
             </div>
         </div>

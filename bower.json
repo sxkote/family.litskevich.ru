@@ -27,7 +27,8 @@
     "bootstrap-material-design": "^0.5.10",
     "snackbarjs": "^1.1.0",
     "flow.js": "^2.11.2",
-    "angular-local-storage": "^0.2.7"
+    "angular-local-storage": "^0.2.7",
+    "ngCordova": "^0.1.27-alpha"
   },
   "private": true,
   "resolutions": {

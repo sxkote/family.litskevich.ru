@@ -11,8 +11,8 @@ angular.module('app')
                 require: ['ngModel'],
                 templateUrl: 'app/partials/file-upload.partial.html',
                 controllerAs: 'vm',
-                controller: ['$scope', 'authService', 'fileService', 'URLS',
-                    function ($scope, authService, fileService, URLS) {
+                controller: ['$scope', '$element', 'authService', 'fileService', 'URLS',
+                    function ($scope, $element, authService, fileService, URLS) {
 
                         this.blob = null;
                         this.isUploading = false;
@@ -78,6 +78,14 @@ angular.module('app')
                             if ($scope.fileCode)
                                 fileService.download($scope.fileCode);
                         };
+
+                        $scope.inputFilesChanged = function () {
+                            var files = $element.find('input[type=file]').get(0).files;
+                            for (var i = 0; i < files.length; i++) {
+                                this.flow.addFile(files[i]);
+                            }
+                            this.upload();
+                        }.bind(this);
 
                         if (!$scope.multipleFiles)
                             this.reload();
