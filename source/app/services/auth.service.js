@@ -18,6 +18,12 @@ angular.module('app')
                 registration: function (registration) {
                     return $http.post(URLS.API.BASE + 'user/registration', registration);
                 },
+                recoveryInit:function(login){
+                    return $http.post(URLS.API.BASE + 'user/recovery/init', { Search: login });
+                },
+                recoveryComplete:function(code){
+                    return $http.post(URLS.API.BASE + 'user/recovery/complete', { Code: code});
+                },
                 login: function (login, password, onSuccess, onError) {
 
                     // auth request body to be send

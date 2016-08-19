@@ -25,6 +25,8 @@ app.config(['$compileProvider', '$routeProvider', 'localStorageServiceProvider',
             templateUrl: 'app/views/registration.view.html'
         }).when('/login', {
             templateUrl: 'app/views/login.view.html'
+        }).when('/recovery', {
+            templateUrl: 'app/views/recovery.view.html'
         }).when('/persons', {
             templateUrl: 'app/views/person-list.view.html'
         }).when('/persons/:id', {

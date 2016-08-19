@@ -24,6 +24,11 @@ img.avatar {
     cursor: pointer;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
 
+.snackbar.success {
+  background-color: #2e7d32; }
+.snackbar.error {
+  background-color: #a94442; }
+
 .card, .person-card, .article-card {
   position: relative;
   display: block;
